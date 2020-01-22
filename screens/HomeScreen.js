@@ -37,7 +37,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
-        {/* <StatusBar hidden={false} translucent={false} barStyle="light-content" ></StatusBar> */}
+        
         <View style={{ flex: 2 }}>
           {renderHeaderComponent()}
         </View>
