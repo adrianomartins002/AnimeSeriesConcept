@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-export const Button = ({item, index}) => {
+
+export const Button = ({ id, title, onPress, itemMenuSelecionado, colorBackground }) => {
+
+
   return (
-    <TouchableOpacity>
-      <View style={[style.container, index==0? {backgroundColor:"#B89200"}:{}, item.style]}>
-        <Text style={[style.textButton, item.style]}>{item.title ? item.title : "title"}</Text>
+    <TouchableOpacity onPress={()=>onPress(id)}>
+      <View style={[style.container, { backgroundColor: colorBackground }]}>
+        <Text style={[style.textButton, style]}>{title ? title : "title"}</Text>
       </View>
     </TouchableOpacity>
   )
