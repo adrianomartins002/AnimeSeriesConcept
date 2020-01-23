@@ -7,8 +7,8 @@ export const Button = ({ id, title, onPress, itemMenuSelecionado, colorBackgroun
 
   return (
     <TouchableOpacity onPress={()=>onPress(id)}>
-      <View style={[style.container, { backgroundColor: colorBackground }]}>
-        <Text style={[style.textButton, style]}>{title ? title : "title"}</Text>
+      <View style={[style.container, id==1?{marginLeft:8}:{}, { backgroundColor: colorBackground }]}>
+        <Text style={[style.textButton]}>{title ? title : "title"}</Text>
       </View>
     </TouchableOpacity>
   )

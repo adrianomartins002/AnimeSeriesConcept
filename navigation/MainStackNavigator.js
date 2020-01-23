@@ -3,8 +3,7 @@ import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import DetailTitleScreen from '../screens/DetailTitleScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -14,8 +13,7 @@ const config = Platform.select({
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Link: LinksScreen,
-    Settings: SettingsScreen
+    Detail: DetailTitleScreen,
   },
   config
 );

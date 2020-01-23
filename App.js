@@ -21,8 +21,7 @@ export default function App(props) {
   } else {
     return (
       <View style={styles.container}>
-        {/* {Platform.OS === 'ios' && <StatusBar barStyle="default" />} */}
-        {/* <StatusBar hidden={false} translucent={false} barStyle="light-content" ></StatusBar> */}
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <AppNavigator />
       </View>
     );
