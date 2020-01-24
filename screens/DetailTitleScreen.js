@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View, Text, Image } from 'react-native';
-import { HeaderComponent } from '../components/organisms';
+import { HeaderComponent, MenuHorizontal } from '../components/organisms';
+import Carousel from 'react-native-snap-carousel'
 
 export default function DetailTitleScreen(props) {
   return (
@@ -92,7 +93,7 @@ export default function DetailTitleScreen(props) {
         </View>
 
         <View style={{ flexDirection: "row", flex: 1 }}>
-          <View style={{ flex: 1.4 }}>
+          <View style={{ flex: 1.5 }}>
             <Text style={{ color: "#FEFEFE", fontSize: 14, }}>
               The most powerful superhero in the world can kill anyone with one blow.
                 But nothing can challenge him, so he struggles with ennui and depression.
@@ -100,7 +101,7 @@ export default function DetailTitleScreen(props) {
           </View>
           <View style={{ flex: 1 }}>
             <Image
-              source={{ uri: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bfa8b99b-29e6-401b-8b2f-9c35d70306d7/dd99x17-4d501058-2d4a-49cc-b0ec-e12dcc79a506.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JmYThiOTliLTI5ZTYtNDAxYi04YjJmLTljMzVkNzAzMDZkN1wvZGQ5OXgxNy00ZDUwMTA1OC0yZDRhLTQ5Y2MtYjBlYy1lMTJkY2M3OWE1MDYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RWpoapBjRlspxAcgDe6P2Srh-t4DLHDWpqIKs8coxO8" }}
+              source={{ uri: "https://www.pngkey.com/png/full/226-2265278_a-transparent-genos-genos-one-punch-man-drawing.png" }}
               resizeMode="contain"
               style={{ flex: 1 }}
             />
@@ -112,12 +113,57 @@ export default function DetailTitleScreen(props) {
       {/*  */}
       <View style={{
         flex: 2.5,
-        backgroundColor: "#CECC"
+        backgroundColor: "#171717"
       }}>
+        <View style={{ backgroundColor: "#171717", flex: 0.2, justifyContent: "center" }}>
+          <MenuHorizontal />
+        </View>
+        <View style={{
 
+        }}>
+           <Carousel
+              // ref={(c) => { this._carousel = c; }}
+              data={[{}, {}, {}, {}]}
+              renderItem={()=><CardVideo />}
+              sliderWidth={400}
+              itemWidth={200}
+              loop={true}
+            />
+          
+        </View>
       </View>
     </View>
   );
+}
+
+const CardVideo = () => {
+  return (
+    <View
+      style={{
+        width: 200,
+        height: 200,
+        marginLeft:10,
+        backgroundColor: "#171717"
+      }}
+    >
+      <Image
+        source={{ uri: "https://www.comboinfinito.com.br/principal/wp-content/uploads/2019/10/One-Punch-Man-4.jpg" }}
+        style={{ height:150, borderRadius:30}}
+        resizeMode="contain"
+      />
+      <View
+      style={{
+        height:50,
+        flexDirection:"column",
+        justifyContent:"flex-start"
+      }}
+      >
+      <Text style={{fontSize:16, color:"#FFF"}}>Episode 1/12</Text>
+      <Text style={{fontSize:16, color:"#FFF", fontWeight:"bold"}}>The Strongest man</Text>
+      </View>
+
+    </View>
+  )
 }
 
 DetailTitleScreen.navigationOptions = {
