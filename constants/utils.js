@@ -37,3 +37,9 @@ export const cards = new Array(
   },
   
 )
+
+const informationsAnimes = [
+  {
+    
+  },
+]
